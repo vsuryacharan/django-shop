@@ -1,0 +1,53 @@
+
+
+{% block content %}
+<div class="auth-container">
+    <h2>Add Product</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Add Product</button>
+    </form>
+</div>
+
+<style>
+    .auth-container {
+        width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h2 {
+        color: #ff8c00;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input, select, button {
+        margin: 5px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .btn {
+        background: #ff8c00;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #e07b00;
+    }
+</style>
+{% endblock %}
